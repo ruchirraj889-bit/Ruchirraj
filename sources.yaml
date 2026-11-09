@@ -1,0 +1,80 @@
+# Tuned for: Assistant Professor (History) + other PG-level history posts, India.
+# A listing is alerted when its title has a POST keyword AND the subject is History
+# (found in the title, or - for sources not marked "trusted" - inside the linked page).
+
+post_keywords:
+  - "assistant professor|asst\\.? professor|asst prof"
+  - "lecturer"
+  - "junior research fellow|\\bJRF\\b|research fellow"
+  - "post[- ]?graduate teacher|\\bPGT\\b"
+  - "archivist|curator|epigraphist|research assistant|research associate"
+  - "faculty"
+
+subject_keywords:
+  - "history"
+  - "historical"
+  - "archaeolog"
+  - "\\bAIHC\\b|ancient indian history"
+  - "museology|epigraphy|numismatics"
+
+exclude_keywords:
+  - "result"
+  - "admit card"
+  - "answer key"
+  - "syllabus"
+  - "cut[- ]?off"
+  - "interview schedule"
+
+max_detail_fetches: 40   # how many linked pages to open per run to check the subject
+
+sources:
+  # --- Aggregators already filtered to History (trusted: no subject check) ---
+  - name: MySarkariNaukri - Asst Prof History
+    type: html
+    trusted: true
+    url: https://www.mysarkarinaukri.com/find/assistant-professor-history-jobs
+  - name: MySarkariNaukri - History Professor
+    type: html
+    trusted: true
+    url: https://www.mysarkarinaukri.com/find/history-professor-jobs
+
+  # --- Faculty-focused / general listings (subject checked inside the page) ---
+  - name: FacultyPlus
+    type: html
+    url: https://www.facultyplus.com/
+  - name: CentralStateJobs
+    type: html
+    url: https://centralstatejobs.in/
+
+  # --- Official bodies (verify each URL once in your browser) ---
+  - name: UPSC
+    type: html
+    url: https://upsc.gov.in/whats-new
+  - name: UGC
+    type: html
+    url: https://www.ugc.gov.in/
+  - name: Employment News
+    type: html
+    url: https://www.employmentnews.gov.in/
+  - name: ICHR
+    type: html
+    url: https://ichr.ac.in/
+  - name: Archaeological Survey of India
+    type: html
+    url: https://asi.nic.in/
+  - name: National Archives of India
+    type: html
+    url: https://nationalarchives.nic.in/
+
+  # --- State PSCs: uncomment/add the states you want, after checking the URL ---
+  # - { name: MPPSC,  type: html, url: "https://mppsc.mp.gov.in/" }
+  # - { name: HPPSC,  type: html, url: "https://hppsc.hp.gov.in/" }
+  # - { name: UPPSC,  type: html, url: "https://uppsc.up.nic.in/" }
+  # - { name: RPSC,   type: html, url: "https://rpsc.rajasthan.gov.in/" }
+  # - { name: BPSC,   type: html, url: "https://www.bpsc.bihar.gov.in/" }
+  # - { name: TNPSC,  type: html, url: "https://www.tnpsc.gov.in/" }
+  # - { name: KPSC,   type: html, url: "https://www.keralapsc.gov.in/" }
+  # - { name: WBPSC,  type: html, url: "https://wbpsc.gov.in/" }
+
+  # --- Universities: add the career/recruitment page of any you care about ---
+  # - { name: Delhi University, type: html, url: "https://www.du.ac.in/" }
